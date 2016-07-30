@@ -2,7 +2,7 @@
 session_start();
 	function task_mail(){
 		
-				$to       = '14cse11@gmail.com';
+				$to       = 'asudhakargeek@gmail.com';
 				$subject  = "Today's Update";
 				$msg1 = 'Hi Mam, <br/><blockquote>'. $_SESSION["username"].' has completed today -<b>'. date("Y-m-d").'</b>And they did <ol>';
 				$msg_2 = "";
