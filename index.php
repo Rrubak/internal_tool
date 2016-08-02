@@ -12,7 +12,7 @@
 					session_start();
 	  			function Verify(){
 			  		if($_SESSION["verify"]=="verify"){
-			  			echo '<a style="color:#1D82ED">wrong password</a>';
+			  			echo '<a class="btn">wrong password</a>';
 			  			session_unset();
 			  			session_destroy();
 			  		} 
