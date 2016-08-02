@@ -2,7 +2,7 @@
 session_start();
 	function task_mail(){
 		
-				$to       = 'asudhakargeek@gmail.com';
+				$to       = '14cse11@gmail.com';
 				$subject  = "Today's Update";
 				$msg1 = 'Hi Mam, <br/><blockquote>'. $_SESSION["username"].' has completed today -<b>'. date("Y-m-d").'</b>And they did <ol>';
 				$msg_2 = "";
@@ -20,6 +20,7 @@ session_start();
 
 				$final  = $msg1 . $msg_2."</ol></blockquote> Regards,<br/>Rubak,<br/>Vefetch";
 				echo "$final";
+				 // phpinfo();
 
 				$headers  = 'From: [your_gmail_account_username]@gmail.com' . "\r\n" .
 	            'MIME-Version: 1.0' . "\r\n" .
