@@ -12,12 +12,12 @@
 					session_start();
 	  			function Verify(){
 			  		if($_SESSION["verify"]=="verify"){
-			  			echo '<a class="btn">wrong password</a>';
-			  			session_unset();
-			  			session_destroy();
+			  			echo '<a font-size:30px;> wrong password </a>';
 			  		} 
 		  		}
 		  		Verify();
+		  		session_unset();
+			  	session_destroy();
 	  		?>
 	  		<h1>Application Login</h1>
 	  		<form method="post" action="app/login_validate.php">
@@ -27,8 +27,6 @@
 		  		<input type="submit" class="btn" name="submit" value="log in">
 	  		</form>
 		</div>
-		<div class="message">
-			Err
-		</div>
+		
 	</body>
 </html>

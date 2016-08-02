@@ -5,6 +5,7 @@
 </head>
 <body>
 	<?php
+		session_start();
 		function conn(){
 			$servername = "localhost";
 			$username = "root";
@@ -18,7 +19,7 @@
 			    die("Connection failed: " . mysqli_connect_error());
 			}
 			echo "Connected successfully   "; 
-			session_start();
+			
 			$i=0;
 			$sql="select username,password from user_password";
 			$result = $conn->query($sql);
@@ -34,7 +35,7 @@
 				elseif(($_POST["username"])!=$row["username"]) {
 					print_r('wrong password');
 					$_SESSION["verify"]="verify";
-					echo '<script type="text/javascript">window.location.href=" ../index.php";</script>';
+					header("Location: ../view/home.php");
 				}
 			}
 		}	
