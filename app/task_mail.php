@@ -6,7 +6,7 @@ session_start();
 				$subject  = "Today's Update";
 				$msg1 = 'Hi Mam, <br/><blockquote>'. $_SESSION["username"].' has completed today -<b>'. date("Y-m-d").'</b>And they did <ol>';
 				$msg_2 = "";
-				for ($i=1; $i < 4 ; $i++) { 
+				for ($i=1;($_POST['task'.$i]); $i++) { 
 					if(isset($_POST['task'.$i])){
 						if($msg_2 == ""){
 							$msg_2 = "<li>".$_POST['task'.$i]."</li>";
