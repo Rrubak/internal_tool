@@ -28,7 +28,7 @@
 	  		</form>
 		</div>
 		<div class="message">
-			Error. Enter a valid email address.
+			Err
 		</div>
 	</body>
 </html>
