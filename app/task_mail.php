@@ -12,7 +12,7 @@ session_start();
 				if (!$conn) {
 				    die("Connection failed: " . mysqli_connect_error());
 				}
-				echo "Connected successfully   "; 
+				
 		
 				$to       = '14cse11@gmail.com';
 				$subject  = "Today's Update";
@@ -20,7 +20,7 @@ session_start();
 				$msg_2 = "";
 				for ($i=1;(bool)($_POST['task'.$i]) ; $i++) { 
 					$sql='INSERT INTO task values("'.$_SESSION["username"].'","'.$_POST["task".$i].'","'.date("Y-m-d").'")';
-					echo $sql;
+					
 					if(isset($_POST['task'.$i])){
 						if($msg_2 == ""){
 							$msg_2 = "<li>".$_POST['task'.$i]."</li>";
