@@ -6,7 +6,7 @@
 </head>
 <body class="login">
 	<h1> welcome</h1>
-	<form method="post" action="../app/task_mail.php" >
+	<form method="post" action="../app/save_today_task.php" >
 		 <input placeholder="task1" name="task1" autofocus required>
 		 <input placeholder="task2" name="task2"  >
 		 <input placeholder="task3" name="task3"  >

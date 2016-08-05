@@ -1,47 +1,19 @@
-2<html>
-<head>
-	<title>demo</title>
+<?php
+	include_once '../db/db_functions.php';
+	session_start();
+	function validate_input(){
+		$conn = db_connect();
+		$sql="SELECT * FROM users WHERE `email` ='".$_POST["email"]."' AND `password` = '".$_POST["password"]."'";
+		$result = $conn->query($sql);
+		if($row = $result->fetch_assoc()){
+			$_SESSION["username"]=$row["username"];
+			$_SESSION["userid"]=$row["id"];
+			header("Location: ../view/home.php");
+
+		} else{
+			$_SESSION["verify"]="verify";
+			header("Location: ../index.php");
+		}
+	}	
+	validate_input();
 	
-</head>
-<body>
-	<?php
-		session_start();
-		function conn(){
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-
-			// Create connection
-			$conn = mysqli_connect($servername, $username, $password,"test");
-
-			// Check connection
-			if (!$conn) {
-			    die("Connection failed: " . mysqli_connect_error());
-			}
-			echo "Connected successfully   "; 
-			
-			$i=0;
-			$sql="select username,password from user_password";
-			$result = $conn->query($sql);
-			print_r($result);
-			while($row = $result->fetch_assoc()){
-				$final[]=$row;
-				print_r($row['username']);
-				if((($_POST["username"])==$row["username"])&&(($_POST["password"])==$row["password"])){
-					$_SESSION["username"]=$row["username"];
-					print_r($row['username']);
-					header("Location: ../view/home.php");
-				}
-				elseif(($_POST["username"])!=$row["username"]) {
-					print_r('wrong password');
-					$_SESSION["verify"]="verify";
-					header("Location: ../view/home.php");
-				}
-			}
-		}	
-		conn();
-	?> 
-
-	
-</body>
-</html>

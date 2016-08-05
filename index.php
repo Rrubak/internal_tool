@@ -21,9 +21,8 @@
 	  		?>
 	  		<h1>Application Login</h1>
 	  		<form method="post" action="app/login_validate.php">
-		  		<input placeholder="Username" name="username" autofocus required>
+		  		<input placeholder="email" name="email" autofocus required>
 		  		<input type="password" name="password" placeholder="Password" required>
-		  			<a >Forgot your Password?</a>
 		  		<input type="submit" class="btn" name="submit" value="log in">
 	  		</form>
 		</div>
